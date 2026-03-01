@@ -19,10 +19,10 @@ document.querySelector('#adelante').addEventListener('click', (e) => {
 })
 function renderDoom() {
   imgContainer.innerHTML = ''
-  indice= indice.map((item) => {
-    newIndex = item + accion
-    if (newIndex == -1) newIndex = 3
-    if (newIndex == 4) newIndex = 0
+  indice = indice.map((item) => {
+    let newIndex = item + accion
+    if (newIndex === -1) newIndex = 3
+    if (newIndex === 4) newIndex = 0
     return newIndex
   })
   console.log(indice)

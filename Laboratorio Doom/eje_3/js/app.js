@@ -19,7 +19,7 @@ btnMostar.addEventListener('click', (item) => {
   //
   const row = document.createElement('div')
   row.classList.add('row', 'g-0', 'justify-content-center')
-  colImg = document.createElement('div')
+  const colImg = document.createElement('div')
   colImg.classList.add('col-md-4')
   //
   const img = document.createElement('img')
@@ -27,7 +27,7 @@ btnMostar.addEventListener('click', (item) => {
   img.style.width = '15rem'
   img.style.height = '15rem'
   img.src = persona.foto
-  colContenido = document.createElement('div')
+  const colContenido = document.createElement('div')
   colContenido.classList.add('col-md-8', 'justify-content-center')
   //
   const cardBody = document.createElement('div')

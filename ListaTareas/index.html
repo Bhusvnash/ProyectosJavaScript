@@ -75,7 +75,14 @@
             </thead>
             <tbody id="tabla_tareas"></tbody>
           </table>
-          <div class="btn-group" role="group" aria-label="Basic example">
+          <div class="btn-group" role="group" aria-label="Filtros">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="mostrarTodas()"
+            >
+              Mostrar Todas
+            </button>
             <button
               type="button"
               class="btn btn-primary"
@@ -83,14 +90,14 @@
             >
               Filtrar Pendientes
             </button>
-            <button onchange="filtrarPriridad()" class="btn btn-primary">
-              <select class=" btn-primary" id="opcionPrioridad">
-                <option selected>Prioridad</option>
+            <div class="btn-group" role="group">
+              <select class="form-select bg-primary text-white border-0" id="opcionPrioridad" onchange="filtrarPriridad()">
+                <option value="Todas" selected>Filtrar por Prioridad</option>
                 <option value="Alta">Alta</option>
                 <option value="Media">Media</option>
                 <option value="Baja">Baja</option>
               </select>
-            </button>
+            </div>
           </div>
         </div>
       </div>

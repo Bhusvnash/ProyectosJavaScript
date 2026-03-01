@@ -2,45 +2,49 @@ const txtNombre = document.querySelector('#txtNombre'),
   txtApellido = document.querySelector('#txtApellido'),
   txtEdad = document.querySelector('#txtEdad'),
   AddTxtSaldo = document.querySelector('#AddTxtSaldo')
-//#_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-txtEdad.addEventListener('change', (e) => {
-  console.log(e)
+
+txtEdad.addEventListener('change', () => {
   let edad = parseInt(txtEdad.value)
-  if (edad >= 18) {
-    const input = document.createElement('input')
-    input.type = 'Number'
-    input.classList.add('form-control', 'mt-1')
-    input.placeholder = 'Saldo'
-    input.id = 'txtSsaldo'
-    AddTxtSaldo.appendChild(input)
+  let inputExistente = document.querySelector('#txtSaldo')
+  if (!isNaN(edad) && edad >= 18) {
+    if (!inputExistente) {
+      const input = document.createElement('input')
+      input.type = 'number'
+      input.classList.add('form-control', 'mt-1')
+      input.placeholder = 'Saldo'
+      input.id = 'txtSaldo'
+      AddTxtSaldo.appendChild(input)
+    }
+  } else {
+    if (inputExistente) {
+      AddTxtSaldo.removeChild(inputExistente)
+    }
   }
 })
-/*
-Al ingresar los valores de los inputs se debe validar que no queden 
-vacíos, si se dejan vacíos se debe resaltar el borde en rojo y llenar el \
-fondo en amarillo para cada input.
-*/
+
 txtNombre.addEventListener('blur', () => {
-  if (txtNombre.value.trim() == '') {
-    alert('Debe llenar el campo Nombre! ')
+  if (txtNombre.value.trim() === '') {
+    alert('Debe llenar el campo Nombre!')
     txtNombre.classList.add('invalido')
   } else {
     txtNombre.classList.remove('invalido')
   }
 })
+
 txtApellido.addEventListener('blur', () => {
-  if (txtNombre.value.trim() == '') {
-    alert('Debe llenar el campo Nombre! ')
-    txtNombre.classList.add('invalido')
+  if (txtApellido.value.trim() === '') {
+    alert('Debe llenar el campo Apellido!')
+    txtApellido.classList.add('invalido')
   } else {
-    txtNombre.classList.remove('invalido')
+    txtApellido.classList.remove('invalido')
   }
 })
+
 txtEdad.addEventListener('blur', () => {
-  if (txtNombre.value.trim() == '') {
-    alert('Debe llenar el campo Nombre! ')
-    txtNombre.classList.add('invalido')
+  if (txtEdad.value.trim() === '') {
+    alert('Debe llenar el campo Edad!')
+    txtEdad.classList.add('invalido')
   } else {
-    txtNombre.classList.remove('invalido')
+    txtEdad.classList.remove('invalido')
   }
 })

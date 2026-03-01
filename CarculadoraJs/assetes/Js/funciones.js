@@ -1,29 +1,58 @@
 //Carculadora cientifica
 const entrada = document.getElementById("entrada");
+
 function numero(valor) {
+	if (!entrada) return;
+	if (entrada.value === "Error") {
+		entrada.value = "";
+	}
 	entrada.value += valor;
 }
+
 function limpiar() {
+	if (!entrada) return;
+	if (entrada.value === "Error") {
+		entrada.value = "";
+		return;
+	}
 	entrada.value = entrada.value.slice(0, -1);
 }
+
 function CE() {
+	if (!entrada) return;
 	entrada.value = "";
 }
 
 function carcular() {
-	let entrta = entrada.value;
-	expresion = expresion.replace("x", "*");
-	entrada.value = eval(expresion);
+	if (!entrada || entrada.value === "") return;
+	let expresion = entrada.value;
+	while (expresion.includes("x")) {
+		expresion = expresion.replace("x", "*");
+	}
+	try {
+		let resultado = eval(expresion);
+		if (isNaN(resultado) || resultado === undefined || resultado === Infinity || resultado === -Infinity) {
+			entrada.value = "Error";
+		} else {
+			entrada.value = resultado;
+		}
+	} catch (error) {
+		entrada.value = "Error";
+	}
 }
+
 function raizCuadrada() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
-	if (!isNaN(n)) {
+	if (!isNaN(n) && n >= 0) {
 		entrada.value = Math.sqrt(n);
 		return;
 	}
 	entrada.value = "Error";
 }
+
 function raizCubica() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) {
 		entrada.value = "Error";
@@ -31,7 +60,9 @@ function raizCubica() {
 	}
 	entrada.value = Math.cbrt(n);
 }
+
 function factorial() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 
 	if (isNaN(n) || n < 0 || !Number.isInteger(n)) {
@@ -45,17 +76,24 @@ function factorial() {
 	}
 	entrada.value = res;
 }
+
 function random() {
+	if (!entrada) return;
 	entrada.value = Math.random();
 }
+
 function pi() {
+	if (!entrada) return;
 	entrada.value += Math.PI;
 }
 
 function euler() {
+	if (!entrada) return;
 	entrada.value += Math.E;
 }
+
 function absoluto() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) {
 		entrada.value = "Error";
@@ -63,7 +101,9 @@ function absoluto() {
 	}
 	entrada.value = Math.abs(n);
 }
+
 function sen() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -72,6 +112,7 @@ function sen() {
 }
 
 function cos() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -80,6 +121,7 @@ function cos() {
 }
 
 function tan() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -88,6 +130,7 @@ function tan() {
 }
 
 function sec() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -96,6 +139,7 @@ function sec() {
 }
 
 function csc() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -104,6 +148,7 @@ function csc() {
 }
 
 function ctg() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n)) return (entrada.value = "Error");
 
@@ -112,6 +157,7 @@ function ctg() {
 }
 
 function log10() {
+	if (!entrada) return;
 	let n = parseFloat(entrada.value);
 	if (isNaN(n) || n <= 0) return (entrada.value = "Error");
 	entrada.value = Math.log10(n);
