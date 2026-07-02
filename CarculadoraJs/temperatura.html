@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./assetes/Css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./assetes/Css/style.css" />
+	</head>
+	<body>
+		<header class="border-bottom border-2 border-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h1 class="text-center display-1 primary">Carculadoras</h1>
+					</div>
+					<div class="col-12">
+						<nav class="nav justify-content-center">
+							<a class="nav-link" href="./index.html">Carculadora cientifica</a>
+							<a class="nav-link" href="./temperatura.html"
+								>conversor de temperaturas</a
+							>
+							<a class="nav-link" href="./imc.html"> Indice de Masa Corporal</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<h1 class="h1 text-center title m-3">Convertidor de temperaturas</h1>
+				<div class="row g-3 justify-content-center">
+					<div class="col-12 col-md-4">
+						<div class="p-3 border rounded-3 shadow-sm">
+							<label class="form-label fw-semibold">Kelvin</label>
+							<input
+								type="text"
+								oninput="convertirTemperatura()"
+								id="kelvin"
+								class="form-control"
+								placeholder="K"
+							/>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-4">
+						<div class="p-3 border rounded-3 shadow-sm">
+							<label class="form-label fw-semibold">Celsius</label>
+							<input
+								type="text"
+								oninput="convertirTemperatura()"
+								id="celsius"
+								class="form-control"
+								placeholder="°C"
+							/>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-4">
+						<div class="p-3 border rounded-3 shadow-sm">
+							<label class="form-label fw-semibold">Fahrenheit</label>
+							<input
+								type="text"
+								oninput="convertirTemperatura()"
+								id="fahrenheit"
+								class="form-control"
+								placeholder="°F"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="mt-5 border-top border-2 border-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<p class="mb-1">
+							<b>Dunamer Beharry</b>
+						</p>
+						<p class="mb-0">
+							<a
+								href="mailto:beharrysantoyo@gmail.com"
+								class="text-decoration-none text-muted"
+							>
+								beharrysantoyo@gmail.com
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="./assetes/Js/funciones.js"></script>
+		<script src="./assetes/Js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.775),
+		rgb(197, 197, 197),
+		#ffffff
+	);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.operaciones{
+	justify-content: center;
+	align-items: center;
+}
+.ce{
+	background-color:darkblue;
+}

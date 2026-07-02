@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./assetes/Css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./assetes/Css/style.css" />
+	</head>
+	<body>
+		<header class="border-bottom border-2 border-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h1 class="text-center display-1 primary">Carculadoras</h1>
+					</div>
+					<div class="col-12">
+						<nav class="nav justify-content-center">
+							<a class="nav-link" href="./index.html">Carculadora cientifica</a>
+							<a class="nav-link" href="./temperatura.html"
+								>conversor de temperaturas</a
+							>
+							<a class="nav-link" href="./imc.html"> Indice de Masa Corporal</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="py-4">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-md-6">
+						<div class="p-4 border rounded-3 shadow-sm">
+							<h2 class="h3 text-center mb-4">Calculadora de IMC</h2>
+
+							<label class="form-label fw-semibold">Peso (kg)</label>
+							<input
+								type="text"
+								id="peso"
+								class="form-control mb-3"
+								placeholder="Ej: 70"
+							/>
+
+							<label class="form-label fw-semibold">Altura (m)</label>
+							<input
+								type="text"
+								id="altura"
+								class="form-control mb-4"
+								placeholder="Ej: 1.75"
+							/>
+
+							<div class="d-flex justify-content-center gap-2">
+								<button class="btn btn-primary px-4" onclick="calcularIMC()">
+									Calcular
+								</button>
+
+								<button
+									class="btn btn-outline-secondary px-4"
+									onclick="limpiarIMC()"
+								>
+									Limpiar
+								</button>
+							</div>
+
+							<hr class="my-4" />
+
+							<p class="text-center mb-1 fw-semibold">Resultado:</p>
+							<p class="text-center fs-4" id="resultadoIMC">---</p>
+
+							<p class="text-center text-muted" id="estadoIMC">
+								
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="mt-5 border-top border-2 border-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<p class="mb-1">
+							<b>Dunamer Beharry</b>
+						</p>
+						<p class="mb-0">
+							<a
+								href="mailto:beharrysantoyo@gmail.com"
+								class="text-decoration-none text-muted"
+							>
+								beharrysantoyo@gmail.com
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="./assetes/Js/funciones.js"></script>
+		<script src="./assetes/Js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
