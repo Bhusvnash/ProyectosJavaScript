@@ -1,0 +1,12 @@
+.language {
+  background-color: white;
+  border: 1px solid black;
+  text-decoration: black !important;
+  color: rgb(2, 19, 59);
+  padding: 2px 4px; /* Ajusta el espacio dentro del recuadro */
+  font-family: monospace; /* Para que parezca un lenguaje de programación */
+  border-radius: 4px; /* Para crear bordes redondeados */
+}
+main ,img {
+  justify-content: center !important;
+}

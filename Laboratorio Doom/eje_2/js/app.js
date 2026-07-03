@@ -1,56 +1,46 @@
-const rutaImgs = [
-  { id: 'gato', ruta: './assets/gato.jpg' },
-  { id: 'perro', ruta: './assets/perro.jpg' },
-  { id: 'loro', ruta: './assets/loro.jpg' },
-]
-//objeto con id,ruta
-const contenedor = document.querySelector('#contenedor_img')
-
-function loadHtml() {
-  rutaImgs.forEach((item) => {
-    const div = document.createElement('div')
-    div.classList.add(
-      'card',
-      'col-3',
-      'm-2',
-      'justify-content-center',
-      'align-items-center'
-    )
-    const img = document.createElement('img')
-    img.classList.add('card-img-top', 'm-1', 'size_img')
-    img.src = item.ruta
-    img.id = item.id
-    div.appendChild(img)
-    contenedor.appendChild(div)
-  })
-}
-loadHtml()
-
-const gato = document.querySelector('#gato')
-gato.addEventListener('mouseover', () => {
-  gato.src = rutaImgs[2].ruta
+const txtNombre = document.querySelector('#txtNombre'),
+  txtApellido = document.querySelector('#txtApellido'),
+  txtEdad = document.querySelector('#txtEdad'),
+  AddTxtSaldo = document.querySelector('#AddTxtSaldo')
+//#_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+txtEdad.addEventListener('change', (e) => {
+  console.log(e)
+  let edad = parseInt(txtEdad.value)
+  if (edad >= 18) {
+    const input = document.createElement('input')
+    input.type = 'Number'
+    input.classList.add('form-control', 'mt-1')
+    input.placeholder = 'Saldo'
+    input.id = 'txtSsaldo'
+    AddTxtSaldo.appendChild(input)
+  }
 })
-//Al pasar sobre la de Perro debe cambiar a una imagen de calavera
-const perro = document.querySelector('#perro')
-perro.addEventListener('mouseover', () => {
-  console.log(perro)
-  perro.src = './assets/calavera.jpg'
-})
-
-document.querySelector('#recargar').addEventListener('click', () => {
-  //evento reload
-  window.location.reload()
-})
-// Sobre la imagen de loro debe cambiar por la imagen de perro
-const loro = document.querySelector('#loro')
-loro.addEventListener('mouseover', () => {
-  loro.src = rutaImgs[1].ruta
-})
-
 /*
-html card : 
-<div class="card col-4 m-2 justify-content-center align-items-center">
-  <img class="card-img-top m-1"  style="height: 9rem; width: 10rem;" src="./assets/gato.jpg" alt="gato" />
-</div>
-
+Al ingresar los valores de los inputs se debe validar que no queden 
+vacíos, si se dejan vacíos se debe resaltar el borde en rojo y llenar el \
+fondo en amarillo para cada input.
 */
+txtNombre.addEventListener('blur', () => {
+  if (txtNombre.value.trim() == '') {
+    alert('Debe llenar el campo Nombre! ')
+    txtNombre.classList.add('invalido')
+  } else {
+    txtNombre.classList.remove('invalido')
+  }
+})
+txtApellido.addEventListener('blur', () => {
+  if (txtNombre.value.trim() == '') {
+    alert('Debe llenar el campo Nombre! ')
+    txtNombre.classList.add('invalido')
+  } else {
+    txtNombre.classList.remove('invalido')
+  }
+})
+txtEdad.addEventListener('blur', () => {
+  if (txtNombre.value.trim() == '') {
+    alert('Debe llenar el campo Nombre! ')
+    txtNombre.classList.add('invalido')
+  } else {
+    txtNombre.classList.remove('invalido')
+  }
+})
