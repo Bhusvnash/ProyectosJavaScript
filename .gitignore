@@ -1,0 +1,16 @@
+.vscode/
+.idea/
+.fleet/
+.zed/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+.project
+.classpath
+.settings/
+
+*.swp
+*.swo
+*~
+.DS_Store
